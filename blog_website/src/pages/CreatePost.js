@@ -16,7 +16,7 @@ const CreatePost = ({isAuth}) => {
 
     useEffect(() => {
         if(!isAuth){
-            navigate("/")
+            navigate("React_firebase_blog/")
         }
 
     }, [])
