@@ -20,7 +20,6 @@ const Home = ({isAuth}) => {
     console.log('helllo')
     const postDoc = doc(db, "posts", id)
     await deleteDoc(postDoc)
-
   }
 
   return (
@@ -32,8 +31,7 @@ const Home = ({isAuth}) => {
           <h3>{post.postText}</h3>
           <h2>{post.author.name}</h2>
           {
-            isAuth && post.author.id === auth.currentUser.uuid && (
-
+            isAuth && post.author.id === auth.currentUser.uid && (
           <div className="delete-post">
             <h2 onClick={() => deletePost(post.id)} >Delete</h2>
           </div>
