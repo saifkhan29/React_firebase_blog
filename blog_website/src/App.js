@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "./firebase-config";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -33,7 +33,7 @@ function App() {
           }
         </nav>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home isAuth={isAuth} />}></Route>
           <Route path="/createpost" element={<CreatePost isAuth={isAuth} />}></Route>
           <Route
             path="/login"
