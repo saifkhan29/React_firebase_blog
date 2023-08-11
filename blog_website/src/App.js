@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <nav>
-          <Link to="React_firebase_blog/">Home</Link>
+          <Link to="/">Home</Link>
           {!isAuth ? 
           <Link to="/login">Login</Link> : 
           <>
